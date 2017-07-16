@@ -1,3 +1,3 @@
 <p id="footer">
-	sekolahkoding.com
+	soccernews.com
 </p>
