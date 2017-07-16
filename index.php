@@ -1,24 +1,24 @@
 <?php 
+require_once "core/init.php";
 require_once "view/header.php";
+
+$articles = tampilkan();
+
+//die(print_r($articles));
 ?>
 
+<?php while($row= mysqli_fetch_assoc($articles)):?>
 <div class="tiap_artikel">
-	<h3>Judul artikel</h3>
+	<h3><?= $row['judul'];?></h3>
     <p>
-    	Isi artikel
+    	<?= $row['isi'];?>
     </p>
-    <p class="waktu">12:00 AM</p>
-    <p class="tag">Sepakbola Inggris</p>
+    <p class="waktu"> <?= $row['waktu']; ?></p>
+    <p class="tag"><?= $row['tag']; ?></p>
 </div>
+<?php endwhile;?>
 
-<div class="tiap_artikel">
-	<h3>Judul artikel</h3>
-    <p>
-    	Isi artikel
-    </p>
-    <p class="waktu">12:00 AM</p>
-    <p class="tag">Sepakbola Spanyol</p>
-</div>
+
 
 
 <?php 
