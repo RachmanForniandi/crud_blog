@@ -21,6 +21,18 @@ h1{
 	margin: 5px;
 }
 
+#menu{
+	margin: 10px 0;
+}
+
+#menu a{
+	color:#000000;
+}
+
+#error{
+	color:#FF0004;
+}
+
 .waktu, .tag{
 	font-size:11px;
 }

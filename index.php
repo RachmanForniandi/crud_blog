@@ -18,6 +18,7 @@ $articles = tampilkan();
 </div>
 <?php endwhile;?>
 
+<?php require_once "view/footer.php"?>
 
 
 
