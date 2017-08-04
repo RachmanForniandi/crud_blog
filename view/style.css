@@ -33,6 +33,19 @@ h1{
 	color:#FF0004;
 }
 
+#judul_single{
+	font-size:24px;
+	font-weight:bold;
+}
+
+#isi_single{
+	margin:10 px 0 15px 0;
+}
+
+#tag_single{
+	font-size:12px;
+}
+
 .waktu, .tag{
 	font-size:11px;
 }

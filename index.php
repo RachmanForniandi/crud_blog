@@ -9,9 +9,9 @@ $articles = tampilkan();
 
 <?php while($row= mysqli_fetch_assoc($articles)):?>
 <div class="tiap_artikel">
-	<h3><?= $row['judul'];?></h3>
+	<h3><a href="single.php?id=<?= $row['id']; ?>"><?= $row['judul'];?></a></h3>
     <p>
-    	<?= $row['isi'];?>
+    	<?= excerpt($row['isi']);?>
     </p>
     <p class="waktu"> <?= $row['waktu']; ?></p>
     <p class="tag"><?= $row['tag']; ?></p>

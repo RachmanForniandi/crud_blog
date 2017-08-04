@@ -35,4 +35,9 @@ function run($query){
 	if(mysqli_query($koneksi, $query)) return true;
 	else return false;
 }	
+
+function excerpt($string){
+	$string = substr($string, 0, 10);
+	return $string . "...";
+}
 ?>
