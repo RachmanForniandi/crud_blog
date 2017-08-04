@@ -7,16 +7,32 @@ function tampilkan(){
 	
 	return $hasil;
 }
-	function tambah_data($judul, $konten, $tag){
-		$query = "INSERT INTO blog(judul, isi, tag) VALUES('$judul','$isi','$tag')";
-		return run($query);
-	}
+
+function tampilkan_per_id($id){
+	global $koneksi;
 	
-	function run($query){
-		global $koneksi;
+	$query = "SELECT * FROM blog WHERE id= $id";
+	$hasil = mysqli_query($koneksi, $query)or die('gagal menampilkan data');
+	
+	return $hasil;
+}
+
+function tambah_data($judul, $isi, $tag){
+	$query = "INSERT INTO blog(judul, isi, tag) 
+			  VALUES('$judul','$isi','$tag')";
+	return run($query);
+}
+
+function edit_data($judul, $isi, $tag, $id){
+	$query = "UPDATE blog SET judul='$judul', isi='$isi', tag='$tag' 
+			  WHERE id=$id";
+	return run($query);
+}
+	
+function run($query){
+	global $koneksi;
 		
-		if(mysqli_query($koneksi, $query)) return true;
-		else return false;
-	}
-	
+	if(mysqli_query($koneksi, $query)) return true;
+	else return false;
+}	
 ?>

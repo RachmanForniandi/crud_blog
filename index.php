@@ -15,6 +15,7 @@ $articles = tampilkan();
     </p>
     <p class="waktu"> <?= $row['waktu']; ?></p>
     <p class="tag"><?= $row['tag']; ?></p>
+    <a href="edit.php?id=<?= $row['id']; ?>">Edit</a>
 </div>
 <?php endwhile;?>
 
