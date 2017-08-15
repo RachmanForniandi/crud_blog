@@ -28,6 +28,11 @@ function edit_data($judul, $isi, $tag, $id){
 			  WHERE id=$id";
 	return run($query);
 }
+
+function hapus_data($id){
+	$query = "DELETE From blog WHERE id=$id";
+	return run($query);
+}
 	
 function run($query){
 	global $koneksi;
