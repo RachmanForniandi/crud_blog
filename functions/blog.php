@@ -1,20 +1,24 @@
 <?php 
 function tampilkan(){
-	global $koneksi;
-	
 	$query = "SELECT * FROM blog";
-	$hasil = mysqli_query($koneksi, $query)or die('gagal menampilkan data');
-	
-	return $hasil;
+	return hasil($query);
 }
 
 function tampilkan_per_id($id){
-	global $koneksi;
-	
 	$query = "SELECT * FROM blog WHERE id= $id";
-	$hasil = mysqli_query($koneksi, $query)or die('gagal menampilkan data');
-	
-	return $hasil;
+	return hasil($query);
+}
+
+function hasil_cari($cari){
+	$query = "SELECT * FROM blog WHERE judul LIKE '%$cari%'";
+	return hasil($query);
+}
+
+function hasil($query){
+	global $koneksi;
+	if ($hasil = mysqli_query($koneksi, $query)or die('gagal menampilkan data')) {
+		return $hasil;
+	}
 }
 
 function tambah_data($judul, $isi, $tag){
