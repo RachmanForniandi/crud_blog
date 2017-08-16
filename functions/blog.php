@@ -22,6 +22,9 @@ function hasil($query){
 }
 
 function tambah_data($judul, $isi, $tag){
+	$judul= escape($judul);
+	$isi = escape($isi);
+
 	$query = "INSERT INTO blog(judul, isi, tag) 
 			  VALUES('$judul','$isi','$tag')";
 	return run($query);
@@ -49,4 +52,10 @@ function excerpt($string){
 	$string = substr($string, 0, 10);
 	return $string . "...";
 }
+
+function escape($data){
+	global $koneksi;
+	return mysqli_real_escape_string($koneksi, $data);
+}
+
 ?>
