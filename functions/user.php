@@ -9,6 +9,7 @@ function cek_data($user, $pass){
 	global $koneksi;
 
 	if ($hasil=mysqli_query($koneksi, $query)) {
+		//print_r($hasil);
 		if (mysqli_num_rows($hasil) !=0)return true;
 		else return false;
 	}

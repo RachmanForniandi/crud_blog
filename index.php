@@ -9,6 +9,7 @@ if (isset($_GET['cari'])) {
 	$cari = $_GET['cari'];
 	$articles = hasil_cari($cari);
 }
+
 ?>
 
 <form action="" method="get">
@@ -29,9 +30,3 @@ if (isset($_GET['cari'])) {
 <?php endwhile;?>
 
 <?php require_once "view/footer.php"?>
-
-
-
-<?php 
-require_once "view/footer.php";
-?>
